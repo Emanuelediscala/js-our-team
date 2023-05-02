@@ -31,7 +31,19 @@ const Team = [
         profile:"barbara-ramos-graphic-designer.jpg"
     }
 ]
-for (const key in Team) {
-    console.log(`${key} con valore:`, Team[key]);
+    // for (const key in Team) {
+    // let infoGeneriche = Team[key]
+    // console.log(infoGeneriche);
+    // let FirstPerson = infoGeneriche[0]
+    // let contenitore = document.querySelector(".container").innerHTML = FirstPerson;
+
+// }
+
+ for (let i = 0; i < Team.length; i++) {
+    const elements = Team[i];
+    console.log(elements.nome);
+    let contenitore;
+    contenitore = document.querySelector(".container").innerHTML = elements[i].nome;
+
 }
 
