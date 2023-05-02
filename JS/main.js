@@ -31,19 +31,24 @@ const Team = [
         profile:"barbara-ramos-graphic-designer.jpg"
     }
 ]
-    // for (const key in Team) {
-    // let infoGeneriche = Team[key]
-    // console.log(infoGeneriche);
-    // let FirstPerson = infoGeneriche[0]
-    // let contenitore = document.querySelector(".container").innerHTML = FirstPerson;
-
-// }
-
- for (let i = 0; i < Team.length; i++) {
+// Definisco ciclo
+for (let i = 0; i < Team.length; i++) {
     const elements = Team[i];
-    console.log(elements.nome);
-    let contenitore;
-    contenitore = document.querySelector(".container").innerHTML = elements[i].nome;
-
+    // CREAZIONE CATEGORIA NOMI
+    let contenitoreNomi = document.querySelector(".Names");
+    let pName = document.createElement("p");
+    pName.innerText += elements.nome;
+    contenitoreNomi.append(pName);
+    // CREAZIONE CATEGORIA RUOLI
+    let contenitoreRuoli = document.querySelector(".Roles");
+    let roleP = document.createElement("p");
+    roleP.innerText += elements.role;
+    contenitoreRuoli.appendChild(roleP);
+    // CREAZIONE CATEGORIA PICS
+    let contenitoreFoto = document.querySelector(".Profiles");
+    let pics = document.createElement("img")
+    pics.src += "./img/" + elements.profile;
+    pics.classList.add("img-fluid","d-block", "py-2");
+    contenitoreFoto.appendChild(pics);
 }
 
